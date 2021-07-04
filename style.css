@@ -2,20 +2,32 @@
 *::before,
 *::after{
   box-sizing: border-box;
+  margin: 0%;
+  height: 0%;
+}
+
+body{
+  height: 100Vh;
+  width: 100Vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .container {
-  background-color: #333;
-  height: 30vh;
+  background: #666;
+  width: 100%;
+  height: 30%;
+  overflow-y: hidden;
   display: flex;
-  flex-direction: row-reverse;  /* row | row-reverse | column | column-reverse */
-  flex-wrap: wrap-reverse;      /* nowrap | wrap | wrap-reverse */
-  flex-flow: column nowrap;     /* flex-direction | flex-wraps */
+  flex-flow: row-reverse wrap-reverse;
+  justify-content: space-evenly;
 }
 
-.item {
-  border: medium solid #999;
-  width: 20%;
+.item{
+  background-color: #444;
+  border: thin dashed #fff;
   height: 20%;
-  background-color: #666;
+  width: 20%;
 }
