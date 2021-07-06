@@ -32,10 +32,15 @@ body {
 .item{
   background-color: #444;
   border: thin dashed #fff;
-  height: 100%;
-  width: 100px;
-  flex-grow: 0;                     /* Llamado el factor de crecimiento: en base al espacio sobrante del container, se repartira dicho espacio quitativamiente por cada uno de los items hijos, su valor por defecto es 0 */
+  /* height: 100%; */
+  /* width: 100px; */
+  flex-grow: 0;                     /* Llamado el factor de crecimiento: en base al espacio sobrante del container, se repartira dicho espacio equitativamiente por cada uno de los items hijos, su valor por defecto es 0 */
 
-  flex-shrink: 1;
+  flex-shrink: 1;                   /* Llamado el factor de encogimiento: en base al espacio que se haya restado a partir del ultimo item, se eliminara equitativamiente a cada uno de los items su anchura por el espacio restado, su valor por defecto es 1, el 0 dira que los item no se encogeran */
+
   flex-basis: auto;
+}
+
+.item:nth-child(2) {
+  flex-shrink: 2;                  /* El espcio restante que se haya elimnado a partir del ultimo item se dividira en 4, pero al segundo item se le restara 2 veces el espacio a comparacion a sus items hermanos que tendan 1 parte de la divicion del espacio de sus anchos */
 }
