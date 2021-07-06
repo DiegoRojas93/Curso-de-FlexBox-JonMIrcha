@@ -6,7 +6,7 @@
   padding: 0%;
 }
 
-body{
+body {
   height: 100Vh;
   width: 100Vw;
   display: flex;
@@ -19,20 +19,23 @@ body{
   width: 100%;
   height: 30%;
   display: flex;
-  flex-flow: column wrap;              /* ( Direction | wrap ) wrap: crea una nueva linea cuando los hijos ya no caben en una sola linea */
+  flex-flow: row nowrap;              /* ( Direction | wrap ) wrap: crea una nueva linea cuando los hijos ya no caben en una sola linea */
   justify-content: flex-start;        /* Justifica el espacio que habra en entre los hijos en el eje principal (Especificado en el flex-direction) */
 
   align-items: stretch;               /* Alinea los hijos en el eje traversal (Especificado en el flex-direction) dentro de cada linea */
   /* stretch | flex-start | center | flex-end | baseline (alinea los items referente a la linea base de todos los textos)*/
 
-  align-content: stretch;         /* Alinea en CONJUNTO TODOS LOS HIJOS DE CADA LINEA en el eje traversal (Especificado en el flex-direction) solo funciona cuando los hijos NO estan en una UNICA linea (Es decir que debera esta usandose WRAP o NOWRAP) */
-
-  /* stretch | stretch | flex-start | center | flex-end | space-bewteen | space-around | space-evenly*/
+  align-content: flex-start;         /* Alinea en CONJUNTO TODOS LOS HIJOS DE CADA LINEA en el eje traversal (Especificado en el flex-direction) solo funciona cuando los hijos NO estan en una UNICA linea (Es decir que debera esta usandose WRAP o NOWRAP) */
+  /* flex-start | center | flex-end | space-bewteen | space-around | space-evenly | stretch */
 }
 
 .item{
   background-color: #444;
   border: thin dashed #fff;
-  /* height: 15%;
-  width: 25%; */
+  height: 100%;
+  width: 100px;
+  flex-grow: 0;                     /* Llamado el factor de crecimiento: en base al espacio sobrante del container, se repartira dicho espacio quitativamiente por cada uno de los items hijos, su valor por defecto es 0 */
+
+  flex-shrink: 1;
+  flex-basis: auto;
 }
