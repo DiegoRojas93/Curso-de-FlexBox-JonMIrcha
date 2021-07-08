@@ -38,7 +38,11 @@ body {
 
   flex-shrink: 1;                   /* Llamado el factor de encogimiento: en base al espacio que se haya restado a partir del ultimo item, se eliminara equitativamiente a cada uno de los items su anchura por el espacio restado, su valor por defecto es 1, el 0 dira que los item no se encogeran */
 
-  flex-basis: auto;
+  flex-basis: auto;                 /* Es el tamaño base (width o height) del elemento hijo dentro de la linea de la caja Flex Box; auto es su valor por defecto */
+                                    /* Si el main Axis tiene un row en su flex-direction, el item tendra una el valor en su width */
+                                    /* Si el main Axis tiene un column en su flex-direction, el item tendra una el valor en su height */
+
+  flex: 0 1 auto;                   /* Es un shothand ( grow | shrink | basis )  */
 }
 
 .item:nth-child(2) {
