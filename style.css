@@ -1,60 +1,52 @@
 *,
 *::before,
-*::after{
+*::after {
   box-sizing: border-box;
-  padding: 0%;
-  margin: 0%;
-}
-
-body {
-  background-color: grey;
-  height: 100Vh;
-  width: 100Vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-content: space-between;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-  background-color: darkslateblue;
-  overflow: hidden;
-  width: 100%;
-  height: 30%;
+  max-width: 100%;
+  margin: auto;
+}
+
+.flex-container {
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-content: stretch;
+  flex-flow: row wrap;
 }
 
-.item {
-  background-color: rgb(29, 0, 49);
-  line-height: 100px;
-  text-align: center;
-  height: 100px;
-  width: 100px;
-  flex: 0 1 auto;
-
-  order: 0;                /* Representa el orden de los elementos hijos de la caja Flex Box, su valor por defecto es Cero y aceptan valores positivos o negativos, Funciona solamente cuando lo agregamos a un hijo en espcifico, UN VALOR MENOR IRA SIEMPRE ANTES DE UN VALOR MAYOR*/
+.flex-item {
+  border: thin solid red;
+  flex: 0 1 100%;
 }
 
-.item:nth-child(5),
-.item:nth-child(16) {
-  background-color: pink;
+@media (min-width: 576px) {
+  .flex-item {
+    flex: 0 1 50%;
+  }
 }
 
-.item:nth-child(5) {
-  order: -1;              /* Se posicionara primero */
-
-  align-self: center;     /* Sobreescribe el valor de la pripidad align-items sólo para el hijo especificado */
+@media (min-width: 768px) {
+  .flex-item {
+    flex: 0 1 25%;
+  }
 }
 
-.item:nth-child(16) {
-  order: 1;               /* Se posicionara despues de todos los hijos (ya que tiene por valor de 0 en su posicion) */
-
-  align-self: flex-end;   /* Sobreescribe el valor de la pripidad align-items sólo para el hijo especificado */
+@media (min-width: 992px) {
+  .flex-item {
+    flex: 0 1 12.5%;
+  }
 }
 
-p {
-  color: gray;
+@media (min-width: 1200px) {
+  .flex-item {
+    flex: 0 1 6.25%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .flex-item {
+    flex: 0 1 3.125%;
+  }
 }
