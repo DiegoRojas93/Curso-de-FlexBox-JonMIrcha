@@ -4,6 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 body{
@@ -17,6 +18,34 @@ main {
 }
 
 .titulares {
-  height: 75px;
+  min-height: 75px;
+  padding: 2rem;
   background-color: rgb(71, 71, 71);
+}
+
+.header {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+@media screen and (min-width: 578px) {
+  .header {
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+
+  .menu ul{
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+  }
 }
