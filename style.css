@@ -2,49 +2,59 @@
 *::before,
 *::after{
   box-sizing: border-box;
-  margin: 0%;
   padding: 0%;
+  margin: 0%;
 }
 
 body {
+  background-color: grey;
   height: 100Vh;
   width: 100Vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-content: space-between;
 }
 
 .container {
-  background: #666;
+  background-color: darkslateblue;
+  overflow: hidden;
   width: 100%;
   height: 30%;
   display: flex;
-  flex-flow: row nowrap;              /* ( Direction | wrap ) wrap: crea una nueva linea cuando los hijos ya no caben en una sola linea */
-  justify-content: flex-start;        /* Justifica el espacio que habra en entre los hijos en el eje principal (Especificado en el flex-direction) */
-
-  align-items: stretch;               /* Alinea los hijos en el eje traversal (Especificado en el flex-direction) dentro de cada linea */
-  /* stretch | flex-start | center | flex-end | baseline (alinea los items referente a la linea base de todos los textos)*/
-
-  align-content: flex-start;         /* Alinea en CONJUNTO TODOS LOS HIJOS DE CADA LINEA en el eje traversal (Especificado en el flex-direction) solo funciona cuando los hijos NO estan en una UNICA linea (Es decir que debera esta usandose WRAP o NOWRAP) */
-  /* flex-start | center | flex-end | space-bewteen | space-around | space-evenly | stretch */
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
 }
 
-.item{
-  background-color: #444;
-  border: thin dashed #fff;
-  /* height: 100%; */
-  /* width: 100px; */
-  flex-grow: 0;                     /* Llamado el factor de crecimiento: en base al espacio sobrante del container, se repartira dicho espacio equitativamiente por cada uno de los items hijos, su valor por defecto es 0 */
+.item {
+  background-color: rgb(29, 0, 49);
+  line-height: 100px;
+  text-align: center;
+  height: 100px;
+  width: 100px;
+  flex: 0 1 auto;
 
-  flex-shrink: 1;                   /* Llamado el factor de encogimiento: en base al espacio que se haya restado a partir del ultimo item, se eliminara equitativamiente a cada uno de los items su anchura por el espacio restado, su valor por defecto es 1, el 0 dira que los item no se encogeran */
-
-  flex-basis: auto;                 /* Es el tamaño base (width o height) del elemento hijo dentro de la linea de la caja Flex Box; auto es su valor por defecto */
-                                    /* Si el main Axis tiene un row en su flex-direction, el item tendra una el valor en su width */
-                                    /* Si el main Axis tiene un column en su flex-direction, el item tendra una el valor en su height */
-
-  flex: 0 1 auto;                   /* Es un shothand ( grow | shrink | basis )  */
+  order: 0;                /* Representa el orden de los elementos hijos de la caja Flex Box, su valor por defecto es Cero y aceptan valores positivos o negativos, Funciona solamente cuando lo agregamos a un hijo en espcifico, UN VALOR MENOR IRA SIEMPRE ANTES DE UN VALOR MAYOR*/
 }
 
-.item:nth-child(2) {
-  flex-shrink: 2;                  /* El espcio restante que se haya elimnado a partir del ultimo item se dividira en 4, pero al segundo item se le restara 2 veces el espacio a comparacion a sus items hermanos que tendan 1 parte de la divicion del espacio de sus anchos */
+.item:nth-child(5),
+.item:nth-child(16) {
+  background-color: pink;
+}
+
+.item:nth-child(5) {
+  order: -1;              /* Se posicionara primero */
+
+  align-self: center;     /* Sobreescribe el valor de la pripidad align-items sólo para el hijo especificado */
+}
+
+.item:nth-child(16) {
+  order: 1;               /* Se posicionara despues de todos los hijos (ya que tiene por valor de 0 en su posicion) */
+
+  align-self: flex-end;   /* Sobreescribe el valor de la pripidad align-items sólo para el hijo especificado */
+}
+
+p {
+  color: gray;
 }
