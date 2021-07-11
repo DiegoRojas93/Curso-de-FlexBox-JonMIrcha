@@ -53,6 +53,16 @@ main {
   font-size: 5Vw;
 }
 
+.flex-resposive {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.flex-resposive-item {
+  border: thin solid #f60;
+  flex: 1 1 200px;
+}
+
 @media screen and (min-width: 578px) {
   .header {
     flex-flow: row nowrap;
@@ -90,3 +100,4 @@ main {
     flex-flow: row-reverse nowrap;
   }
 }
+
