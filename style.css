@@ -13,6 +13,11 @@ body{
   flex-flow: column nowrap;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 main {
   flex-grow: 1;
 }
@@ -66,5 +71,22 @@ main {
     width: 500px;
     display: flex;
     justify-content: space-between;
+  }
+
+  .flex-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .flex-item {
+    flex: 0 0 50%;
+  }
+
+  .flex-order-1 {
+    order: 1;
+  }
+
+  .flex-row-reverse {
+    flex-flow: row-reverse nowrap;
   }
 }
